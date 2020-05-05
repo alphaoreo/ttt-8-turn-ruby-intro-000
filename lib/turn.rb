@@ -2,7 +2,7 @@ def turn(board)
 
 
 def valid_move?(board, index)
-  
+
   if position_taken(board,index)
     return false
   elsif index.between?(0,board.length)
@@ -12,9 +12,9 @@ def valid_move?(board, index)
 
   end
 end
-    
+
 def position_taken?(board, index)
-  
+
   taken = nil
   if (board[index] ==  " " || board[index] == "" || board[index] == nil)
     taken = false
