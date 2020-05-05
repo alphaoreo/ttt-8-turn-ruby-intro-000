@@ -12,26 +12,25 @@ end
 
 
 def valid_move?(board, index)
-
-  if position_taken(board,index)
+  if !(index.between?(0,board.length()))
     return false
-  elsif index.between?(0,board.length)
-    return true
+  elsif position_taken?(board, index)
+    return false
   else
     return true
-
   end
 end
 
-def position_taken?(board, index)
 
-  taken = nil
-  if (board[index] ==  " " || board[index] == "" || board[index] == nil)
-    taken = false
+# re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
+def position_taken?(board,index)
+  if board[index]== "" || board[index]== " " || board[index]== "  " || board[index]== "   " || board[index]== nil
+    return false
+  elsif board[index] == "X" || board[index]== "O"
+    return true
   else
-    taken = true
+    return true
   end
-  taken
 end
 
 def display_board(board)
