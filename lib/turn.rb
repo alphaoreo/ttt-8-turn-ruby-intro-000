@@ -1,5 +1,5 @@
 def turn(board)
-  puts " Please selct the cell you would like to play in"
+  puts " Please enter 1-9:"
   choice = gets.strip
   value = input_to_index(choice)
   if !(valid_move?(board, value))
