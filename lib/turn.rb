@@ -7,6 +7,7 @@ def turn(board)
   end
   move(board, value)
   display_board(board)
+end
 
 
 
