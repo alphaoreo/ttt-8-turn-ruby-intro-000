@@ -1,8 +1,17 @@
 def turn(board)
+  puts " Please selct the cell you would like to play in"
+  choice = gets.strip
+  value = input_to_index(choice)
+  if !(valid_move?(board, value))
+    turn(board)
+  end
+  move(board, value)
+  display_board(board)
+  
 
 
 def valid_move?(board, index)
-
+  
   if position_taken(board,index)
     return false
   elsif index.between?(0,board.length)
@@ -12,9 +21,9 @@ def valid_move?(board, index)
 
   end
 end
-
+    
 def position_taken?(board, index)
-
+  
   taken = nil
   if (board[index] ==  " " || board[index] == "" || board[index] == nil)
     taken = false
